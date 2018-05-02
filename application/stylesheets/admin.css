@@ -108,7 +108,7 @@ form label {
   width: 50%;
 }
 .row h1 {
-  margin: 80px 0;
+  margin: 40px 0;
 }
 
 .fixed {
@@ -128,10 +128,4 @@ form label {
   padding: 1%;
   margin: 0 auto;
   text-align: justify;
-}
-
-
-span {
-  font-size: 0.8em;
-  opacity: 0.6;
 }

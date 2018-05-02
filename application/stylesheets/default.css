@@ -28,9 +28,52 @@ path {
   color: white;
 }
 
-ul {
+blockquote {
+color: #333334;
+padding: 20px 30px;
+border-left: 15px solid #DFDEDE;
+font-family: 'Lato', sans-serif;
+margin: 20px 0;
+}
+blockquote:before {
+content: "\201C";
+font-family: serif;
+position: absolute;
+left: -29px;
+top: 5px;
+color: #BCBCBC;
+font-size: 50px;
+text-shadow: 1px 2px 0 white;
+}
+blockquote p {
+margin: 0 0 16px;
+font-size: 20px;
+letter-spacing: .05em;
+line-height: 1.4;
+margin-left: 10px;
+font-family: 'Lato';
+font-weight: 400;
+font-style: italic;
+color: #a8a8a8;
+}
+blockquote cite {
+font-style: normal;
+font-weight: 300;
+}
+
+ul#sub_menu, ul#main_menu {
   list-style: none;
   color: white;
+  margin-left: 10px;
+}
+ul {
+    margin-left: 20px;
+}
+ol {
+  margin-left: 20px;
+}
+h1>a {
+  color: #b8b8b8!important;
 }
 .content_item img{
   width: 100%!important;
@@ -73,6 +116,14 @@ ul {
   height: 25px;
   float: left;
   text-align: center;
+}
+
+#button-up {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  left: 200px;
+  cursor: pointer;
 }
 
 #wrapper {
@@ -165,7 +216,34 @@ form label {
   width: 50%;
   padding: 1%;
   margin: 0 auto;
-  text-align: justify;
+  text-align: left;
+  font-size: 19px;
+  font-family: serif;
+  color: #a8a8a8;
+}
+.content li, .content em, .content s {
+  color: #a8a8a8;
+}
+.content p {
+  font-family: 'Open Sans';
+  margin: 20px 0;
+  color: #a8a8a8;
+}
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+  color: #b8b8b8;
+}
+.content img {
+  width: 100%!important;
+  height: auto!important;
+}
+strong {
+  color: #b8b8b8;
+}
+p>strong {
+  color: #a8a8a8;
+}
+.content a {
+  color: rgb(200, 138, 255);
 }
 
 #nav {

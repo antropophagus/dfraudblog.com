@@ -56,12 +56,6 @@ class AdminController extends Controller
     else die ("У вас нет доступа!");
   }
 
-  public function editstateAction() {
-    if ($this->checkAccess(1)) {
-      $this->view->render("Редактировать статью");
-    }
-    else die ("У вас нет доступа!");
-  }
 
   public function createslideAction() {
     if ($this->checkAccess(1)) {
@@ -99,9 +93,24 @@ class AdminController extends Controller
     else die ("У вас нет доступа!");
   }
 
+  public function editstateAction() {
+    if ($this->checkAccess(1)) {
+      $state = $this->model->getState($this->route["id"]);
+      $vars = [
+        'state' => $state,
+      ];
+      $this->view->render("Редактировать статью", $vars);
+    }
+    else die ("У вас нет доступа!");
+  }
+
   public function editslideAction() {
     if ($this->checkAccess(1)) {
-      $this->view->render("Редактировать слайд");
+      $slide = $this->model->getSlide($this->route["id"]);
+      $vars = [
+        'slide' => $slide,
+      ];
+      $this->view->render("Редактировать слайд", $vars);
     }
     else die ("У вас нет доступа!");
   }

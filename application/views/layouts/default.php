@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <title><? echo $title; ?></title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Roboto+Slab|Lato:400i" rel="stylesheet">
     <link rel="stylesheet" href="/application/stylesheets/default.css">
     <link rel="stylesheet" href="/application/stylesheets/buttons.css">
     <link rel="stylesheet" href="/application/stylesheets/antroslider.css">
@@ -38,5 +38,8 @@
     <footer id="footer">
         <p>Все права защищены! &copy; <? echo date (Y) ?></p>
     </footer>
+    <div title="Наверх" id="button-up">
+      <i class="fas fa-chevron-up fa-3x"></i>
+    </div>
   </body>
 </html>

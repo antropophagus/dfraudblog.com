@@ -12,4 +12,20 @@ $(document).ready(function(){
   });
 
   $(".content_item:last").css({"border":"none"});
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 50) {
+        $('#button-up').fadeIn();
+    } else {
+        $('#button-up').fadeOut();
+    }
+});
+
+/** При нажатии на кнопку мы перемещаемся к началу страницы */
+$('#button-up').click(function () {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 1000);
+    return false;
+});
 });

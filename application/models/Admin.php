@@ -12,6 +12,26 @@ class Admin extends Model
     else return true;
   }
 
+  public function getSlide($id)
+  {
+    $params = [
+      'id' => $id,
+    ];
+    $sql = "SELECT * FROM `slides` WHERE id = :id";
+    $slide = $this->db->getRow($sql, $params);
+    return $slide;
+  }
+
+  public function getState($id)
+  {
+    $params = [
+      'id' => $id,
+    ];
+    $sql = "SELECT * FROM `states` WHERE id = :id";
+    $state = $this->db->getRow($sql, $params);
+    return $state;
+  }
+
   public function createState($forms)
   {
 
@@ -51,7 +71,7 @@ class Admin extends Model
   {
     $params = [
       'title' => $forms["title"],
-      'maintext' => $forms["text"],
+      'maintext' => $forms["text_slide"],
       'image' => $forms["image"],
       'id_state' => $forms["id_state"]
     ];
