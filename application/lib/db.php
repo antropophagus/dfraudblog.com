@@ -27,9 +27,10 @@ class db
     return $quary;
   }
 
-  public function insertRecord($sql, $params) {
+  public function insertRecord($sql, $params, $oldimage) {
     $url = $params["image"];
-    if ($url == '') $name = 'default.jpg';
+    if ($url == $oldimage) $name = $url;
+    else if ($url == '')  $name = 'default.jpg';
     else {
   // Проверим HTTP в адресе ссылки
   if (!preg_match("/^https?:/i", $url) && filter_var($url, FILTER_VALIDATE_URL)) {

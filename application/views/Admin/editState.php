@@ -1,6 +1,6 @@
 <? if (!$state) die ('Статья не найдена! <a href="/admin/states">Вернуться</a>')?>
 <h1>Редактировать статью:</h1>
-<form action="/admin/createstate" method="POST">
+<form action="/admin/editstate/<?echo $state[0]["id"]; ?>" method="POST">
     <p><input value="<? echo $state[0]["title"]; ?>" type="text" name="title" placeholder="Заголовок" required></p>
     <p><textarea name="primary_text" placeholder="Вступительный текст" required><? echo $state[0]["primary_text"]; ?></textarea></p>
     <p></p>

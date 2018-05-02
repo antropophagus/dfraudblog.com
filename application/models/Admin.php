@@ -34,7 +34,7 @@ class Admin extends Model
 
   public function createState($forms)
   {
-
+    $image = '---';
     $params = [
       'title' => $forms["title"],
       'primary_text' => $forms["primary_text"],
@@ -43,7 +43,7 @@ class Admin extends Model
       'image' => $forms["image"],
     ];
     $sql = "INSERT INTO `states`(`id`, `title`, `primary_text`, `text`, `category_id`, `date`, `image`) VALUES ('',:title ,:primary_text ,:maintext,:category,NOW(),:image)";
-    $result = $this->db->insertRecord($sql, $params);
+    $result = $this->db->insertRecord($sql, $params, $image);
     return $result;
   }
 
@@ -69,6 +69,7 @@ class Admin extends Model
 
   public function createSlide($forms)
   {
+    $image = '---';
     $params = [
       'title' => $forms["title"],
       'maintext' => $forms["text_slide"],
@@ -76,7 +77,36 @@ class Admin extends Model
       'id_state' => $forms["id_state"]
     ];
     $sql = "INSERT INTO `slides`(`id`, `state_id`, `title`, `text`, `image`) VALUES ('',:id_state ,:title ,:maintext,:image)";
-    $result = $this->db->insertRecord($sql, $params);
+    $result = $this->db->insertRecord($sql, $params, $image);
+    return $result;
+  }
+
+  public function updateSlide($forms, $image, $id)
+  {
+    $params = [
+      'id' => $id,
+      'title' => $forms["title"],
+      'maintext' => $forms["text_slide"],
+      'image' => $forms["image"],
+      'id_state' => $forms["id_state"]
+    ];
+    $sql = "UPDATE `slides` SET `state_id`= :id_state,`title`= :title,`text`= :maintext,`image`= :image WHERE id = :id";
+    $result = $this->db->insertRecord($sql, $params, $image);
+    return $result;
+  }
+
+  public function updateState($forms, $image, $id)
+  {
+    $params = [
+      'id' => $id,
+      'title' => $forms["title"],
+      'primary_text' => $forms["primary_text"],
+      'maintext' => $forms["text"],
+      'category' => $forms["category"],
+      'image' => $forms["image"],
+    ];
+    $sql = "UPDATE `states` SET `title` = :title, `primary_text` = :primary_text, `text` = :maintext, `category_id`= :category, `image`= :image WHERE id = :id";
+    $result = $this->db->insertRecord($sql, $params, $image);
     return $result;
   }
 

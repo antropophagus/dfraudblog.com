@@ -21,11 +21,11 @@ $(document).ready(function(){
     }
 });
 
-/** При нажатии на кнопку мы перемещаемся к началу страницы */
 $('#button-up').click(function () {
     $('body,html').animate({
         scrollTop: 0
     }, 1000);
     return false;
 });
+
 });
